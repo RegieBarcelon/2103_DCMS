@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 17, 2024 at 07:35 AM
+-- Generation Time: Nov 17, 2024 at 01:00 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.0.30
 
@@ -28,7 +28,7 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `appointments` (
-  `ID` int(11) NOT NULL,
+  `PatientID` int(11) NOT NULL,
   `AppointmentDate` date NOT NULL,
   `AppointmentTime` time NOT NULL,
   `Treatment` varchar(255) NOT NULL
@@ -43,7 +43,8 @@ CREATE TABLE `appointments` (
 CREATE TABLE `bill` (
   `Amount` int(50) NOT NULL,
   `Patient` int(50) NOT NULL,
-  `Treatment` varchar(50) NOT NULL
+  `Treatment` varchar(50) NOT NULL,
+  `Payment_Type` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -56,6 +57,22 @@ CREATE TABLE `medicalhistory` (
   `HistoryId` int(50) NOT NULL,
   `details` varchar(50) NOT NULL,
   `Date` date NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `patient`
+--
+
+CREATE TABLE `patient` (
+  `FName` varchar(50) NOT NULL,
+  `LName` varchar(50) NOT NULL,
+  `Address` varchar(50) NOT NULL,
+  `Contact` int(50) NOT NULL,
+  `Age` int(50) NOT NULL,
+  `Gender` varchar(2) NOT NULL,
+  `DateofBirth` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -79,7 +96,7 @@ CREATE TABLE `prescription` (
 CREATE TABLE `schedule` (
   `ScheduleID` varchar(50) NOT NULL,
   `Dentist` int(50) NOT NULL,
-  `AvailbleSlots` time(6) NOT NULL
+  `AvailableSlots` time(6) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -93,20 +110,6 @@ CREATE TABLE `treatment` (
   `Discription` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
--- --------------------------------------------------------
-
---
--- Table structure for table `user`
---
-
-CREATE TABLE `user` (
-  `Name` varchar(50) NOT NULL,
-  `Address` varchar(50) NOT NULL,
-  `Contact` int(50) NOT NULL,
-  `Age` int(50) NOT NULL,
-  `DateofBirth` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
 --
 -- Indexes for dumped tables
 --
@@ -115,7 +118,7 @@ CREATE TABLE `user` (
 -- Indexes for table `appointments`
 --
 ALTER TABLE `appointments`
-  ADD PRIMARY KEY (`ID`);
+  ADD PRIMARY KEY (`PatientID`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -125,7 +128,7 @@ ALTER TABLE `appointments`
 -- AUTO_INCREMENT for table `appointments`
 --
 ALTER TABLE `appointments`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `PatientID` int(11) NOT NULL AUTO_INCREMENT;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
