@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 17, 2024 at 02:13 PM
+-- Generation Time: Nov 17, 2024 at 02:52 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.0.30
 
@@ -20,6 +20,19 @@ SET time_zone = "+00:00";
 --
 -- Database: `dcms`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `appointments`
+--
+
+CREATE TABLE `appointments` (
+  `PatientID` int(11) NOT NULL,
+  `AppointmentDate` date NOT NULL,
+  `AppointmentTime` time NOT NULL,
+  `Treatment` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -49,6 +62,22 @@ CREATE TABLE `medicalhistory` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `patient`
+--
+
+CREATE TABLE `patient` (
+  `FName` varchar(50) NOT NULL,
+  `LName` varchar(50) NOT NULL,
+  `Address` varchar(50) NOT NULL,
+  `Contact` int(50) NOT NULL,
+  `Age` int(50) NOT NULL,
+  `Gender` varchar(2) NOT NULL,
+  `DateofBirth` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `prescription`
 --
 
@@ -61,6 +90,18 @@ CREATE TABLE `prescription` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `schedule`
+--
+
+CREATE TABLE `schedule` (
+  `ScheduleID` varchar(50) NOT NULL,
+  `Dentist` int(50) NOT NULL,
+  `AvailableSlots` time(6) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `treatment`
 --
 
@@ -68,6 +109,86 @@ CREATE TABLE `treatment` (
   `Treatment` varchar(50) NOT NULL,
   `Discription` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `appointments`
+--
+ALTER TABLE `appointments`
+  ADD PRIMARY KEY (`PatientID`);
+
+--
+-- Indexes for table `bill`
+--
+ALTER TABLE `bill`
+  ADD PRIMARY KEY (`Patient`);
+
+--
+-- Indexes for table `medicalhistory`
+--
+ALTER TABLE `medicalhistory`
+  ADD PRIMARY KEY (`HistoryId`);
+
+--
+-- Indexes for table `patient`
+--
+ALTER TABLE `patient`
+  ADD PRIMARY KEY (`Contact`);
+
+--
+-- Indexes for table `prescription`
+--
+ALTER TABLE `prescription`
+  ADD PRIMARY KEY (`PrescriptionID`);
+
+--
+-- Indexes for table `schedule`
+--
+ALTER TABLE `schedule`
+  ADD PRIMARY KEY (`ScheduleID`);
+
+--
+-- Indexes for table `treatment`
+--
+ALTER TABLE `treatment`
+  ADD PRIMARY KEY (`Treatment`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `appointments`
+--
+ALTER TABLE `appointments`
+  MODIFY `PatientID` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `bill`
+--
+ALTER TABLE `bill`
+  MODIFY `Patient` int(50) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `medicalhistory`
+--
+ALTER TABLE `medicalhistory`
+  MODIFY `HistoryId` int(50) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `patient`
+--
+ALTER TABLE `patient`
+  MODIFY `Contact` int(50) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `prescription`
+--
+ALTER TABLE `prescription`
+  MODIFY `PrescriptionID` int(50) NOT NULL AUTO_INCREMENT;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
