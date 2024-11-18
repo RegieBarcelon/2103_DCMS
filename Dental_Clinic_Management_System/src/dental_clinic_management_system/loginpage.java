@@ -43,6 +43,7 @@ public class loginpage extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Login Page");
+        setBackground(new java.awt.Color(0, 51, 102));
 
         jPanel1.setBackground(new java.awt.Color(204, 255, 255));
         jPanel1.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
@@ -60,8 +61,6 @@ public class loginpage extends javax.swing.JFrame {
         });
 
         jLabel3.setText("LOG IN YOUR ACCOUNT");
-
-        jPasswordField1.setText("jPasswordField1");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
