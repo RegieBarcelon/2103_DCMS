@@ -4,14 +4,17 @@
  */
 package dental_clinic_management_system;
 
-
 import java.sql.Statement;
 import java.sql.Connection;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
+
 public class registrationpage extends javax.swing.JFrame {
+
     public registrationpage() {
         initComponents();
         try {
@@ -24,35 +27,35 @@ public class registrationpage extends javax.swing.JFrame {
     Connection con;
     //SQL statement
     Statement st;
-    
-    
+
     //method ng connection
     //need sa connection database name, url, username , password, email
-    
-    private static final String dbName = "dcms";//ung name na dcms yan ung project naten name ng databas naten wich is ung dental clinic blsbks...
+    private static final String dbName = "root";//ung name na dcms yan ung project naten name ng databas naten wich is ung dental clinic blsbks...
     private static final String dbDriver = "com.mysql.cj.jdbc.Driver";
     private static final String dbUrl = "jdbc:MySQL://localhost:3306/dcms"; //gets nnaman dbname dyan ung nakalagay una row private number na 3306 dyan galing dun sa xammp sql pag mag start ka 
     private static final String dbUsername = "root";
-    private static final String dbPassword = " ";
+    private static final String dbPassword = "";
+    private static final String dbEmail = "";
     
-    public void Connection() throws SQLException{
+
+    public void Connection() throws SQLException {
         try {
             Class.forName(dbDriver);
-            con =  DriverManager.getConnection(dbUrl, dbName, dbPassword);
+           
+            con = DriverManager.getConnection(dbUrl, dbName, dbPassword);
             st = con.createStatement();
             if (con != null) {
-                System.out.println("connection successful");
-                
+                System.out.println("EYYY connection successful");
+
             }
-          
+
         } catch (ClassNotFoundException ex) {
             Logger.getLogger(registrationpage.class.getName()).log(Level.SEVERE, null, ex);
-        
+
+        }
+
     }
-        
-        
-    }
-    
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -60,14 +63,14 @@ public class registrationpage extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        username = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
+        password = new javax.swing.JTextField();
+        submitbtn = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
-        jButton2 = new javax.swing.JButton();
+        gologinbtn = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
-        jTextField3 = new javax.swing.JTextField();
+        emailtxt = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Registratio Page");
@@ -83,13 +86,18 @@ public class registrationpage extends javax.swing.JFrame {
         jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel3.setText("Password");
 
-        jButton1.setForeground(new java.awt.Color(0, 0, 102));
-        jButton1.setText("SUBMIT");
+        submitbtn.setForeground(new java.awt.Color(0, 0, 102));
+        submitbtn.setText("SUBMIT");
+        submitbtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                submitbtnActionPerformed(evt);
+            }
+        });
 
         jLabel4.setText("Already have an Account?");
 
-        jButton2.setForeground(new java.awt.Color(153, 51, 0));
-        jButton2.setText("Login");
+        gologinbtn.setForeground(new java.awt.Color(153, 51, 0));
+        gologinbtn.setText("Login");
 
         jLabel5.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel5.setText("Email");
@@ -118,18 +126,18 @@ public class registrationpage extends javax.swing.JFrame {
                                     .addComponent(jLabel3))
                                 .addGap(61, 61, 61)))
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jTextField1)
-                            .addComponent(jTextField2)
-                            .addComponent(jTextField3, javax.swing.GroupLayout.DEFAULT_SIZE, 204, Short.MAX_VALUE)))
+                            .addComponent(username)
+                            .addComponent(password)
+                            .addComponent(emailtxt, javax.swing.GroupLayout.DEFAULT_SIZE, 204, Short.MAX_VALUE)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(67, 67, 67)
                         .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton2)))
+                        .addComponent(gologinbtn)))
                 .addContainerGap(248, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(submitbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(88, 88, 88))
         );
         jPanel1Layout.setVerticalGroup(
@@ -140,21 +148,21 @@ public class registrationpage extends javax.swing.JFrame {
                 .addGap(28, 28, 28)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(username, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(37, 37, 37)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(password, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(28, 28, 28)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5)
-                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(emailtxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 26, Short.MAX_VALUE)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(submitbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(41, 41, 41)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
-                    .addComponent(jButton2))
+                    .addComponent(gologinbtn))
                 .addGap(73, 73, 73))
         );
 
@@ -178,9 +186,45 @@ public class registrationpage extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    /**
-     * @param args the command line arguments
-     */
+    private void submitbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitbtnActionPerformed
+        String username, password,email;
+        if ("".equals(this.username.getText())) {
+            JOptionPane.showMessageDialog(new JFrame(), "REQUIRED USERNAME ");                      
+        }
+        
+        if ("".equals(this.password.getText())) {
+            JOptionPane.showMessageDialog(new JFrame(), "REQUIRED PASSWORD ");
+             if ("".equals(this.password.getText())){          
+        }
+               
+        if ("".equals(this.emailtxt.getText())) { 
+            JOptionPane.showMessageDialog(new JFrame(), "REQUIRED EMAIL ");
+             if ("".equals(this.emailtxt.getText())) {
+        }
+        
+        else{//mag enter ka txt
+            username = this.username.getText();
+            password = this.password.getText();
+            email = this.emailtxt.getText();
+            
+            String queryRegister = "INSERT into a registration(UserName,Password,Email)"
+                    +"VALUEs ('"+username+","+password+","+email+"')";
+                try {
+                    st.execute(queryRegister);
+                } catch (SQLException ex) {
+                    Logger.getLogger(registrationpage.class.getName()).log(Level.SEVERE, null, ex);
+                }
+                JOptionPane.showMessageDialog(new JFrame(), "DATA ADDED SUCCESSFULLY");
+                this.username.setText(" ");
+                this.password.setText(" ");
+                this.emailtxt.setText(" ");
+        }
+        
+        }
+        }
+    }//GEN-LAST:event_submitbtnActionPerformed
+
+    
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -214,16 +258,16 @@ public class registrationpage extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
+    private javax.swing.JTextField emailtxt;
+    private javax.swing.JButton gologinbtn;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
+    private javax.swing.JTextField password;
+    private javax.swing.JButton submitbtn;
+    private javax.swing.JTextField username;
     // End of variables declaration//GEN-END:variables
 }
