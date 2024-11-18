@@ -83,6 +83,12 @@ public class registrationpage extends javax.swing.JFrame {
         jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel2.setText("Username");
 
+        username.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                usernameActionPerformed(evt);
+            }
+        });
+
         jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel3.setText("Password");
 
@@ -98,6 +104,11 @@ public class registrationpage extends javax.swing.JFrame {
 
         gologinbtn.setForeground(new java.awt.Color(153, 51, 0));
         gologinbtn.setText("Login");
+        gologinbtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                gologinbtnActionPerformed(evt);
+            }
+        });
 
         jLabel5.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel5.setText("Email");
@@ -225,6 +236,17 @@ public class registrationpage extends javax.swing.JFrame {
         }
         }
     }//GEN-LAST:event_submitbtnActionPerformed
+
+    private void usernameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_usernameActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_usernameActionPerformed
+
+    private void gologinbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gologinbtnActionPerformed
+        // TODO add your handling code here:
+        loginpage obj = new loginpage();
+        obj.setVisible(true);
+           dispose();
+    }//GEN-LAST:event_gologinbtnActionPerformed
 
     
     public static void main(String args[]) {

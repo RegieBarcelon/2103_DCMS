@@ -28,14 +28,14 @@ public class HOMEPAGE extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
-        jButton6 = new javax.swing.JButton();
-        jButton7 = new javax.swing.JButton();
-        jButton8 = new javax.swing.JButton();
+        goappointment = new javax.swing.JButton();
+        gotreatment = new javax.swing.JButton();
+        gohistory = new javax.swing.JButton();
+        goschedule = new javax.swing.JButton();
+        gobill = new javax.swing.JButton();
+        goregistration = new javax.swing.JButton();
+        gotreatmentdeatails = new javax.swing.JButton();
+        gologout = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Home Page");
@@ -46,59 +46,90 @@ public class HOMEPAGE extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel1.setText("DENTAL CLINIC MANAGEMENT SYSTEM");
 
-        jButton1.setText("APPOINTMENT");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        goappointment.setText("APPOINTMENT");
+        goappointment.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                goappointmentActionPerformed(evt);
             }
         });
 
-        jButton2.setText("TREATMENT");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        gotreatment.setText("TREATMENT DETAILS");
+        gotreatment.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                gotreatmentActionPerformed(evt);
             }
         });
 
-        jButton3.setText("HISTORY");
+        gohistory.setText("HISTORY");
+        gohistory.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                gohistoryActionPerformed(evt);
+            }
+        });
 
-        jButton4.setText("SCHEDULE");
+        goschedule.setText("SCHEDULE");
+        goschedule.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                goscheduleActionPerformed(evt);
+            }
+        });
 
-        jButton5.setText("BILL");
+        gobill.setText("BILL");
+        gobill.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                gobillActionPerformed(evt);
+            }
+        });
 
-        jButton6.setText("REGISTRATION");
+        goregistration.setText("REGISTRATION");
+        goregistration.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                goregistrationActionPerformed(evt);
+            }
+        });
 
-        jButton7.setText("TREATMENT DETAILS");
+        gotreatmentdeatails.setText("TREATMENT ");
+        gotreatmentdeatails.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                gotreatmentdeatailsActionPerformed(evt);
+            }
+        });
 
-        jButton8.setText("LOG OUT");
+        gologout.setText("LOG OUT");
+        gologout.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                gologoutActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(154, Short.MAX_VALUE)
                 .addComponent(jLabel1)
                 .addGap(109, 109, 109))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(72, 72, 72)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 134, Short.MAX_VALUE)
+                        .addComponent(goappointment, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(gohistory, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(gobill, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(goschedule, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(gotreatmentdeatails, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jButton7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jButton6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(goregistration)
                         .addGap(109, 109, 109))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(jButton8)
-                        .addGap(18, 18, 18))))
+                        .addComponent(gologout)
+                        .addGap(18, 18, 18))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(gotreatment)
+                        .addContainerGap())))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -107,25 +138,21 @@ public class HOMEPAGE extends javax.swing.JFrame {
                 .addComponent(jLabel1)
                 .addGap(34, 34, 34)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
-                    .addComponent(jButton6))
+                    .addComponent(goappointment)
+                    .addComponent(goregistration))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton2)
-                    .addComponent(jButton7))
+                    .addComponent(gotreatmentdeatails)
+                    .addComponent(gotreatment))
                 .addGap(18, 18, 18)
-                .addComponent(jButton4)
+                .addComponent(goschedule)
                 .addGap(18, 18, 18)
-                .addComponent(jButton3)
+                .addComponent(gohistory)
                 .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jButton5)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(0, 58, Short.MAX_VALUE)
-                        .addComponent(jButton8)
-                        .addGap(17, 17, 17))))
+                .addComponent(gobill)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 43, Short.MAX_VALUE)
+                .addComponent(gologout)
+                .addGap(17, 17, 17))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -148,19 +175,61 @@ public class HOMEPAGE extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void goappointmentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_goappointmentActionPerformed
         // TODO add your handling code here:
         appointment obj = new appointment();
         obj.setVisible(true);
            dispose();
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_goappointmentActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void gotreatmentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gotreatmentActionPerformed
         // TODO add your handling code here:
-        treatment obj = new treatment();
+        detailstreatment obj = new detailstreatment();
         obj.setVisible(true);
            dispose();
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_gotreatmentActionPerformed
+
+    private void goscheduleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_goscheduleActionPerformed
+        // TODO add your handling code here:
+       schedule obj = new schedule();
+        obj.setVisible(true);
+           dispose();
+    }//GEN-LAST:event_goscheduleActionPerformed
+
+    private void gologoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gologoutActionPerformed
+        // TODO add your handling code here:
+        loginpage obj = new loginpage();
+        obj.setVisible(true);
+           dispose();
+    }//GEN-LAST:event_gologoutActionPerformed
+
+    private void gohistoryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gohistoryActionPerformed
+        // TODO add your handling code here:
+         history obj = new history();
+        obj.setVisible(true);
+           dispose();
+    }//GEN-LAST:event_gohistoryActionPerformed
+
+    private void gobillActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gobillActionPerformed
+        // TODO add your handling code here:
+         bill obj = new bill();
+        obj.setVisible(true);
+           dispose();
+    }//GEN-LAST:event_gobillActionPerformed
+
+    private void goregistrationActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_goregistrationActionPerformed
+        // TODO add your handling code here:
+         registrationpage obj = new registrationpage();
+        obj.setVisible(true);
+           dispose();
+    }//GEN-LAST:event_goregistrationActionPerformed
+
+    private void gotreatmentdeatailsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gotreatmentdeatailsActionPerformed
+        // TODO add your handling code here:
+        treatmentdetails obj = new treatmentdetails();
+        obj.setVisible(true);
+           dispose();
+    }//GEN-LAST:event_gotreatmentdeatailsActionPerformed
 
     /**
      * @param args the command line arguments
@@ -198,14 +267,14 @@ public class HOMEPAGE extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
-    private javax.swing.JButton jButton7;
-    private javax.swing.JButton jButton8;
+    private javax.swing.JButton goappointment;
+    private javax.swing.JButton gobill;
+    private javax.swing.JButton gohistory;
+    private javax.swing.JButton gologout;
+    private javax.swing.JButton goregistration;
+    private javax.swing.JButton goschedule;
+    private javax.swing.JButton gotreatment;
+    private javax.swing.JButton gotreatmentdeatails;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
