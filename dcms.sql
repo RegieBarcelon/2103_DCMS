@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 17, 2024 at 02:52 PM
+-- Generation Time: Nov 18, 2024 at 06:04 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.0.30
 
@@ -110,6 +110,19 @@ CREATE TABLE `treatment` (
   `Discription` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `user`
+--
+
+CREATE TABLE `user` (
+  `UserID` int(11) NOT NULL,
+  `Full_Name` varchar(127) NOT NULL,
+  `Email` varchar(127) NOT NULL,
+  `Password` varchar(127) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
 --
 -- Indexes for dumped tables
 --
@@ -157,6 +170,12 @@ ALTER TABLE `treatment`
   ADD PRIMARY KEY (`Treatment`);
 
 --
+-- Indexes for table `user`
+--
+ALTER TABLE `user`
+  ADD PRIMARY KEY (`UserID`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -189,6 +208,12 @@ ALTER TABLE `patient`
 --
 ALTER TABLE `prescription`
   MODIFY `PrescriptionID` int(50) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `user`
+--
+ALTER TABLE `user`
+  MODIFY `UserID` int(11) NOT NULL AUTO_INCREMENT;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
