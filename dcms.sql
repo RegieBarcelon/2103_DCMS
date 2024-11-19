@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 18, 2024 at 08:13 AM
+-- Generation Time: Nov 19, 2024 at 08:00 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.0.30
 
@@ -41,10 +41,12 @@ CREATE TABLE `appointments` (
 --
 
 CREATE TABLE `bill` (
-  `Amount` int(50) NOT NULL,
-  `Patient` int(50) NOT NULL,
+  `Total Payment` int(50) NOT NULL,
+  `Receipt Number` int(50) NOT NULL,
+  `DateTime` datetime(6) NOT NULL,
   `Treatment` varchar(50) NOT NULL,
-  `Payment_Type` varchar(50) NOT NULL
+  `Payment_Method` varchar(50) NOT NULL,
+  `Amount Paid` int(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -55,8 +57,12 @@ CREATE TABLE `bill` (
 
 CREATE TABLE `medicalhistory` (
   `HistoryId` int(50) NOT NULL,
-  `details` varchar(50) NOT NULL,
-  `Date` date NOT NULL
+  `Patient_Name` varchar(50) NOT NULL,
+  `Treatment` varchar(50) NOT NULL,
+  `Dentist` varchar(50) NOT NULL,
+  `Status` varchar(50) NOT NULL,
+  `Date` date NOT NULL,
+  `Remark` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -78,13 +84,30 @@ CREATE TABLE `patient` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `payment`
+--
+
+CREATE TABLE `payment` (
+  `Amount` int(50) NOT NULL,
+  `Patient` int(50) NOT NULL,
+  `Treatment` varchar(50) NOT NULL,
+  `Payment_Type` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `prescription`
 --
 
 CREATE TABLE `prescription` (
-  `PrescriptionID` int(50) NOT NULL,
-  `MedicalList` varchar(50) NOT NULL,
-  `DateIssued` date NOT NULL
+  `Date` date NOT NULL,
+  `Time` time(6) NOT NULL,
+  `Patient Name` varchar(50) NOT NULL,
+  `Contact Number` int(50) NOT NULL,
+  `Type of Treatment` varchar(50) NOT NULL,
+  `Dentist Assigned` varchar(50) NOT NULL,
+  `Remarks` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -136,7 +159,7 @@ ALTER TABLE `appointments`
 -- Indexes for table `bill`
 --
 ALTER TABLE `bill`
-  ADD PRIMARY KEY (`Patient`);
+  ADD PRIMARY KEY (`Total Payment`);
 
 --
 -- Indexes for table `medicalhistory`
@@ -151,10 +174,16 @@ ALTER TABLE `patient`
   ADD PRIMARY KEY (`Contact`);
 
 --
+-- Indexes for table `payment`
+--
+ALTER TABLE `payment`
+  ADD PRIMARY KEY (`Patient`);
+
+--
 -- Indexes for table `prescription`
 --
 ALTER TABLE `prescription`
-  ADD PRIMARY KEY (`PrescriptionID`);
+  ADD PRIMARY KEY (`Contact Number`);
 
 --
 -- Indexes for table `registration`
@@ -188,7 +217,7 @@ ALTER TABLE `appointments`
 -- AUTO_INCREMENT for table `bill`
 --
 ALTER TABLE `bill`
-  MODIFY `Patient` int(50) NOT NULL AUTO_INCREMENT;
+  MODIFY `Total Payment` int(50) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `medicalhistory`
@@ -203,10 +232,16 @@ ALTER TABLE `patient`
   MODIFY `Contact` int(50) NOT NULL AUTO_INCREMENT;
 
 --
+-- AUTO_INCREMENT for table `payment`
+--
+ALTER TABLE `payment`
+  MODIFY `Patient` int(50) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT for table `prescription`
 --
 ALTER TABLE `prescription`
-  MODIFY `PrescriptionID` int(50) NOT NULL AUTO_INCREMENT;
+  MODIFY `Contact Number` int(50) NOT NULL AUTO_INCREMENT;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
