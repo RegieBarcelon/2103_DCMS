@@ -30,9 +30,9 @@ public class registrationpage extends javax.swing.JFrame {
 
     //method ng connection
     //need sa connection database name, url, username , password, email
-    private static final String dbName = "root";//ung name na dcms yan ung project naten name ng databas naten wich is ung dental clinic blsbks...
+    private static final String dbName = "dcms";//ung name na dcms yan ung project naten name ng databas naten wich is ung dental clinic blsbks...
     private static final String dbDriver = "com.mysql.cj.jdbc.Driver";
-    private static final String dbUrl = "jdbc:MySQL://localhost:3306/dcms"; //gets nnaman dbname dyan ung nakalagay una row private number na 3306 dyan galing dun sa xammp sql pag mag start ka 
+    private static final String dbUrl = "jdbc:MySQL://localhost:3306/"; //gets nnaman dbname dyan ung nakalagay una row private number na 3306 dyan galing dun sa xammp sql pag mag start ka 
     private static final String dbUsername = "root";
     private static final String dbPassword = "";
     private static final String dbEmail = "";
@@ -42,7 +42,7 @@ public class registrationpage extends javax.swing.JFrame {
         try {
             Class.forName(dbDriver);
            
-            con = DriverManager.getConnection(dbUrl, dbName, dbPassword);
+            con = DriverManager.getConnection(dbUrl, dbUsername, dbPassword);
             st = con.createStatement();
             if (con != null) {
                 System.out.println("EYYY connection successful");
@@ -220,8 +220,8 @@ public class registrationpage extends javax.swing.JFrame {
             password = this.password.getText();
             email = this.emailtxt.getText();
             
-            String queryRegister = "INSERT into a registration(UserName,Password,Email)"
-                    +"VALUEs ('"+username+","+password+","+email+"')";
+            String queryRegister = "INSERT INTO `registration`(`UserName`, `Email`, `Password`))"
+                    +"VALUES ("+username+","+password+","+email+")";
                 try {
                     st.execute(queryRegister);
                 } catch (SQLException ex) {

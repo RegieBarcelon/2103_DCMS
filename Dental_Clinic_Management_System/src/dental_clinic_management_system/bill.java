@@ -21,6 +21,7 @@ public class bill extends javax.swing.JFrame {
     public bill() {
         initComponents();
         
+        
     }
     
     
