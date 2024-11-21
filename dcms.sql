@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 19, 2024 at 08:00 AM
+-- Generation Time: Nov 21, 2024 at 09:00 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.0.30
 
@@ -47,6 +47,17 @@ CREATE TABLE `bill` (
   `Treatment` varchar(50) NOT NULL,
   `Payment_Method` varchar(50) NOT NULL,
   `Amount Paid` int(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `loginpage`
+--
+
+CREATE TABLE `loginpage` (
+  `usname` varchar(50) NOT NULL,
+  `password` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -160,6 +171,12 @@ ALTER TABLE `appointments`
 --
 ALTER TABLE `bill`
   ADD PRIMARY KEY (`Total Payment`);
+
+--
+-- Indexes for table `loginpage`
+--
+ALTER TABLE `loginpage`
+  ADD PRIMARY KEY (`usname`);
 
 --
 -- Indexes for table `medicalhistory`
