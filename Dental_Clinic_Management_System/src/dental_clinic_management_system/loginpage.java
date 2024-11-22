@@ -146,7 +146,7 @@ public class loginpage extends javax.swing.JFrame {
 
         jLabel8.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel8.setText("DENTAL CLINIC MANAGEMENT");
-        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 40, -1, -1));
+        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 50, -1, -1));
 
         jLabel9.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel9.setText("SYSTEM");
@@ -189,7 +189,9 @@ public class loginpage extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(new JFrame(), "REQUIRED PASSWORD!! ");
             
         }
-        
+         else{
+            JOptionPane.showMessageDialog(null, "wrong PASSWORD");
+        }  
                
         
     }//GEN-LAST:event_loginbtnActionPerformed
