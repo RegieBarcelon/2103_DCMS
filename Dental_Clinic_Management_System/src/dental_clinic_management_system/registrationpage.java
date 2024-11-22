@@ -17,45 +17,11 @@ public class registrationpage extends javax.swing.JFrame {
 
     public registrationpage() {
         initComponents();
-        try {
-            Connection();
-        } catch (SQLException ex) {
-            Logger.getLogger(registrationpage.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    }
-    //connection method
-    Connection con;
-    //SQL statement
-    Statement st;
-
-    //method ng connection
-    //need sa connection database name, url, username , password, email
-    private static final String dbName = "dcms";//ung name na dcms yan ung project naten name ng databas naten wich is ung dental clinic blsbks...
-    private static final String dbDriver = "com.mysql.cj.jdbc.Driver";
-    private static final String dbUrl = "jdbc:MySQL://localhost:3306/"; //gets nnaman dbname dyan ung nakalagay una row private number na 3306 dyan galing dun sa xammp sql pag mag start ka 
-    private static final String dbUsername = "root";
-    private static final String dbPassword = "";
-    private static final String dbEmail = "";
+      
     
-
-    public void Connection() throws SQLException {
-        try {
-            Class.forName(dbDriver);
-           
-            con = DriverManager.getConnection(dbUrl, dbUsername, dbPassword);
-            st = con.createStatement();
-            if (con != null) {
-                System.out.println("EYYY connection successful");
-
-            }
-
-        } catch (ClassNotFoundException ex) {
-            Logger.getLogger(registrationpage.class.getName()).log(Level.SEVERE, null, ex);
-
-        }
-
+  
+            
     }
-
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -209,45 +175,12 @@ public class registrationpage extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void submitbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitbtnActionPerformed
-        String username, password,email;
-        if ("".equals(this.username.getText())) {
-            JOptionPane.showMessageDialog(new JFrame(), "REQUIRED USERNAME ");                      
-        }
         
-        if ("".equals(this.password.getText())) {
-            JOptionPane.showMessageDialog(new JFrame(), "REQUIRED PASSWORD ");
-             if ("".equals(this.password.getText())){          
-        }
-               
-        if ("".equals(this.emailtxt.getText())) { 
-            JOptionPane.showMessageDialog(new JFrame(), "REQUIRED EMAIL ");
-             if ("".equals(this.emailtxt.getText())) {
-        }
-        
-        else{//mag enter ka txt
-            username = this.username.getText();
-            password = this.password.getText();
-            email = this.emailtxt.getText();
-            
-            String queryRegister = "INSERT INTO `registration`(`UserName`, `Email`, `Password`))"
-                    +"VALUES ("+username+","+password+","+email+")";
-                try {
-                    st.execute(queryRegister);
-                } catch (SQLException ex) {
-                    Logger.getLogger(registrationpage.class.getName()).log(Level.SEVERE, null, ex);
-                }
-                JOptionPane.showMessageDialog(new JFrame(), "DATA ADDED SUCCESSFULLY");
-                this.username.setText(" ");
-                this.password.setText(" ");
-                this.emailtxt.setText(" ");
-        }
-        
-        }
-        }
+          
     }//GEN-LAST:event_submitbtnActionPerformed
 
     private void usernameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_usernameActionPerformed
-        // TODO add your handling code here:
+        
     }//GEN-LAST:event_usernameActionPerformed
 
     private void gologinbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gologinbtnActionPerformed

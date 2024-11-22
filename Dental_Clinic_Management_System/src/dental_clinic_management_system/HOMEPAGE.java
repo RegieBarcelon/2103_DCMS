@@ -54,13 +54,13 @@ public class HOMEPAGE extends javax.swing.JFrame {
         });
         getContentPane().add(gotreatmentdeatails, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 400, 150, -1));
 
-        goappointment.setText("BOOK NOW");
+        goappointment.setText("BOOK  APPOINTMENT");
         goappointment.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 goappointmentActionPerformed(evt);
             }
         });
-        getContentPane().add(goappointment, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 400, 150, -1));
+        getContentPane().add(goappointment, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 400, 170, -1));
 
         goschedule.setText("SCHEDULE");
         goschedule.addActionListener(new java.awt.event.ActionListener() {
@@ -80,7 +80,7 @@ public class HOMEPAGE extends javax.swing.JFrame {
         getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 250, 290, 50));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/dental_clinic_management_system/homepagepic.jpg"))); // NOI18N
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 170, 850, 350));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 170, 850, 330));
 
         jPanel1.setBackground(new java.awt.Color(204, 255, 255));
 

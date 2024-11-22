@@ -41,14 +41,14 @@
     </Component>
     <Component class="javax.swing.JButton" name="goappointment">
       <Properties>
-        <Property name="text" type="java.lang.String" value="BOOK NOW"/>
+        <Property name="text" type="java.lang.String" value="BOOK  APPOINTMENT"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="goappointmentActionPerformed"/>
       </Events>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="340" y="400" width="150" height="-1"/>
+          <AbsoluteConstraints x="320" y="400" width="170" height="-1"/>
         </Constraint>
       </Constraints>
     </Component>
@@ -102,7 +102,7 @@
       </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="0" y="170" width="850" height="350"/>
+          <AbsoluteConstraints x="0" y="170" width="850" height="330"/>
         </Constraint>
       </Constraints>
     </Component>
