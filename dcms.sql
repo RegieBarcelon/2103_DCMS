@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 21, 2024 at 09:00 AM
+-- Generation Time: Nov 22, 2024 at 10:34 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.0.30
 
@@ -24,14 +24,22 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `appointments`
+-- Table structure for table `appointment`
 --
 
-CREATE TABLE `appointments` (
-  `PatientID` int(11) NOT NULL,
-  `AppointmentDate` date NOT NULL,
-  `AppointmentTime` time NOT NULL,
-  `Treatment` varchar(255) NOT NULL
+CREATE TABLE `appointment` (
+  `First Name` varchar(50) NOT NULL,
+  `Last Name` varchar(50) NOT NULL,
+  `Age` int(100) NOT NULL,
+  `Gender` varchar(2) NOT NULL,
+  `Date of Birth` varchar(50) NOT NULL,
+  `Address` varchar(50) NOT NULL,
+  `Contact` int(12) NOT NULL,
+  `Email` varchar(50) NOT NULL,
+  `Appointment date` date NOT NULL,
+  `Appointment time` time(6) NOT NULL,
+  `Treatment` varchar(50) NOT NULL,
+  `Dentist` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -41,12 +49,30 @@ CREATE TABLE `appointments` (
 --
 
 CREATE TABLE `bill` (
-  `Total Payment` int(50) NOT NULL,
-  `Receipt Number` int(50) NOT NULL,
-  `DateTime` datetime(6) NOT NULL,
-  `Treatment` varchar(50) NOT NULL,
-  `Payment_Method` varchar(50) NOT NULL,
+  `Datee` date NOT NULL,
+  `Time` time(6) NOT NULL,
+  `RECEIPT NUMBER` int(50) NOT NULL,
+  `No` int(50) NOT NULL,
+  `Name` varchar(50) NOT NULL,
+  `treatment` varchar(50) NOT NULL,
+  `Amount` int(50) NOT NULL,
+  `Payment Method` varchar(50) NOT NULL,
   `Amount Paid` int(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `history`
+--
+
+CREATE TABLE `history` (
+  `Petya` date NOT NULL,
+  `Patient` varchar(50) NOT NULL,
+  `Treatmentt` varchar(50) NOT NULL,
+  `Dentist` varchar(50) NOT NULL,
+  `Status` varchar(50) NOT NULL,
+  `Remarks` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -56,53 +82,8 @@ CREATE TABLE `bill` (
 --
 
 CREATE TABLE `loginpage` (
-  `usname` varchar(50) NOT NULL,
+  `UserName` varchar(50) NOT NULL,
   `password` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `medicalhistory`
---
-
-CREATE TABLE `medicalhistory` (
-  `HistoryId` int(50) NOT NULL,
-  `Patient_Name` varchar(50) NOT NULL,
-  `Treatment` varchar(50) NOT NULL,
-  `Dentist` varchar(50) NOT NULL,
-  `Status` varchar(50) NOT NULL,
-  `Date` date NOT NULL,
-  `Remark` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `patient`
---
-
-CREATE TABLE `patient` (
-  `FName` varchar(50) NOT NULL,
-  `LName` varchar(50) NOT NULL,
-  `Address` varchar(50) NOT NULL,
-  `Contact` int(50) NOT NULL,
-  `Age` int(50) NOT NULL,
-  `Gender` varchar(2) NOT NULL,
-  `DateofBirth` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `payment`
---
-
-CREATE TABLE `payment` (
-  `Amount` int(50) NOT NULL,
-  `Patient` int(50) NOT NULL,
-  `Treatment` varchar(50) NOT NULL,
-  `Payment_Type` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -129,20 +110,24 @@ CREATE TABLE `prescription` (
 
 CREATE TABLE `registration` (
   `UserName` varchar(127) NOT NULL,
-  `Email` varchar(127) NOT NULL,
-  `Password` varchar(127) NOT NULL
+  `Password` varchar(127) NOT NULL,
+  `Email` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `schedule`
+-- Table structure for table `scedule`
 --
 
-CREATE TABLE `schedule` (
-  `ScheduleID` varchar(50) NOT NULL,
-  `Dentist` int(50) NOT NULL,
-  `AvailableSlots` time(6) NOT NULL
+CREATE TABLE `scedule` (
+  `PatientID` int(11) NOT NULL,
+  `DATE` date NOT NULL,
+  `TIME` time(6) NOT NULL,
+  `PATIENT` varchar(50) NOT NULL,
+  `TREATMENT` varchar(50) NOT NULL,
+  `DENTIST` varchar(50) NOT NULL,
+  `STATUS` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -152,8 +137,11 @@ CREATE TABLE `schedule` (
 --
 
 CREATE TABLE `treatment` (
-  `Treatment` varchar(50) NOT NULL,
-  `Discription` varchar(50) NOT NULL
+  `Name` varchar(50) NOT NULL,
+  `Address` varchar(50) NOT NULL,
+  `Contact` int(50) NOT NULL,
+  `Age` int(50) NOT NULL,
+  `Date of Birth` int(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -161,40 +149,28 @@ CREATE TABLE `treatment` (
 --
 
 --
--- Indexes for table `appointments`
+-- Indexes for table `appointment`
 --
-ALTER TABLE `appointments`
-  ADD PRIMARY KEY (`PatientID`);
+ALTER TABLE `appointment`
+  ADD PRIMARY KEY (`Age`);
 
 --
 -- Indexes for table `bill`
 --
 ALTER TABLE `bill`
-  ADD PRIMARY KEY (`Total Payment`);
+  ADD PRIMARY KEY (`Datee`);
+
+--
+-- Indexes for table `history`
+--
+ALTER TABLE `history`
+  ADD PRIMARY KEY (`Petya`);
 
 --
 -- Indexes for table `loginpage`
 --
 ALTER TABLE `loginpage`
-  ADD PRIMARY KEY (`usname`);
-
---
--- Indexes for table `medicalhistory`
---
-ALTER TABLE `medicalhistory`
-  ADD PRIMARY KEY (`HistoryId`);
-
---
--- Indexes for table `patient`
---
-ALTER TABLE `patient`
-  ADD PRIMARY KEY (`Contact`);
-
---
--- Indexes for table `payment`
---
-ALTER TABLE `payment`
-  ADD PRIMARY KEY (`Patient`);
+  ADD PRIMARY KEY (`UserName`);
 
 --
 -- Indexes for table `prescription`
@@ -206,59 +182,48 @@ ALTER TABLE `prescription`
 -- Indexes for table `registration`
 --
 ALTER TABLE `registration`
-  ADD PRIMARY KEY (`UserName`);
+  ADD PRIMARY KEY (`UserName`),
+  ADD KEY `Email` (`Password`);
 
 --
--- Indexes for table `schedule`
+-- Indexes for table `scedule`
 --
-ALTER TABLE `schedule`
-  ADD PRIMARY KEY (`ScheduleID`);
+ALTER TABLE `scedule`
+  ADD PRIMARY KEY (`PatientID`);
 
 --
 -- Indexes for table `treatment`
 --
 ALTER TABLE `treatment`
-  ADD PRIMARY KEY (`Treatment`);
+  ADD PRIMARY KEY (`Contact`);
 
 --
 -- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT for table `appointments`
+-- AUTO_INCREMENT for table `appointment`
 --
-ALTER TABLE `appointments`
-  MODIFY `PatientID` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `bill`
---
-ALTER TABLE `bill`
-  MODIFY `Total Payment` int(50) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `medicalhistory`
---
-ALTER TABLE `medicalhistory`
-  MODIFY `HistoryId` int(50) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `patient`
---
-ALTER TABLE `patient`
-  MODIFY `Contact` int(50) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `payment`
---
-ALTER TABLE `payment`
-  MODIFY `Patient` int(50) NOT NULL AUTO_INCREMENT;
+ALTER TABLE `appointment`
+  MODIFY `Age` int(100) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `prescription`
 --
 ALTER TABLE `prescription`
   MODIFY `Contact Number` int(50) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `scedule`
+--
+ALTER TABLE `scedule`
+  MODIFY `PatientID` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `treatment`
+--
+ALTER TABLE `treatment`
+  MODIFY `Contact` int(50) NOT NULL AUTO_INCREMENT;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
