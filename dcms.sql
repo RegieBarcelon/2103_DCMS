@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 22, 2024 at 10:34 AM
+-- Generation Time: Nov 23, 2024 at 07:29 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.0.30
 
@@ -109,10 +109,18 @@ CREATE TABLE `prescription` (
 --
 
 CREATE TABLE `registration` (
-  `UserName` varchar(127) NOT NULL,
-  `Password` varchar(127) NOT NULL,
+  `ID` int(50) NOT NULL,
+  `Username` varchar(50) NOT NULL,
+  `Password` varchar(50) NOT NULL,
   `Email` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `registration`
+--
+
+INSERT INTO `registration` (`ID`, `Username`, `Password`, `Email`) VALUES
+(1, 'Regie', 'Regie@gmail.com', '12345');
 
 -- --------------------------------------------------------
 
@@ -182,8 +190,7 @@ ALTER TABLE `prescription`
 -- Indexes for table `registration`
 --
 ALTER TABLE `registration`
-  ADD PRIMARY KEY (`UserName`),
-  ADD KEY `Email` (`Password`);
+  ADD PRIMARY KEY (`ID`);
 
 --
 -- Indexes for table `scedule`
@@ -212,6 +219,12 @@ ALTER TABLE `appointment`
 --
 ALTER TABLE `prescription`
   MODIFY `Contact Number` int(50) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `registration`
+--
+ALTER TABLE `registration`
+  MODIFY `ID` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `scedule`
