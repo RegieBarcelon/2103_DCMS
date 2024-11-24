@@ -26,41 +26,46 @@ public class HOMEPAGE extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        gotreatmentdeatails = new javax.swing.JButton();
-        goappointment = new javax.swing.JButton();
-        goschedule = new javax.swing.JButton();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jPanel2 = new javax.swing.JPanel();
+        goappointment = new javax.swing.JButton();
         gotreatment = new javax.swing.JButton();
+        gohistory = new javax.swing.JButton();
+        goschedule = new javax.swing.JButton();
         gobill = new javax.swing.JButton();
         goregistration = new javax.swing.JButton();
-        gohistory = new javax.swing.JButton();
+        gotreatmentdeatails = new javax.swing.JButton();
         gologout = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Home Page");
-        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        gotreatmentdeatails.setText("TREATMENT ");
-        gotreatmentdeatails.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                gotreatmentdeatailsActionPerformed(evt);
-            }
-        });
-        getContentPane().add(gotreatmentdeatails, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 400, 150, -1));
+        jPanel1.setBackground(new java.awt.Color(204, 255, 255));
+        jPanel1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
-        goappointment.setText("BOOK  APPOINTMENT");
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jLabel1.setText("DENTAL CLINIC MANAGEMENT SYSTEM");
+
+        goappointment.setText("APPOINTMENT");
         goappointment.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 goappointmentActionPerformed(evt);
             }
         });
-        getContentPane().add(goappointment, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 400, 170, -1));
+
+        gotreatment.setText("TREATMENT DETAILS");
+        gotreatment.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                gotreatmentActionPerformed(evt);
+            }
+        });
+
+        gohistory.setText("HISTORY");
+        gohistory.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                gohistoryActionPerformed(evt);
+            }
+        });
 
         goschedule.setText("SCHEDULE");
         goschedule.addActionListener(new java.awt.event.ActionListener() {
@@ -68,38 +73,8 @@ public class HOMEPAGE extends javax.swing.JFrame {
                 goscheduleActionPerformed(evt);
             }
         });
-        getContentPane().add(goschedule, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 400, 150, -1));
-
-        jLabel4.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel4.setFont(new java.awt.Font("Monotype Corsiva", 0, 36)); // NOI18N
-        jLabel4.setText("Every smile tells a story ");
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 200, 330, 70));
-
-        jLabel5.setFont(new java.awt.Font("STLiti", 0, 24)); // NOI18N
-        jLabel5.setText("let us make yours unforgettable");
-        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 250, 290, 50));
-
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/dental_clinic_management_system/homepagepic.jpg"))); // NOI18N
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 170, 850, 330));
-
-        jPanel1.setBackground(new java.awt.Color(204, 255, 255));
-
-        jLabel1.setFont(new java.awt.Font("SimSun-ExtG", 1, 24)); // NOI18N
-        jLabel1.setText("DENTAL CLINIC MANAGEMENT SYSTEM");
-
-        jLabel3.setFont(new java.awt.Font("Segoe UI Black", 0, 12)); // NOI18N
-        jLabel3.setText("\"Healthy smiles start with great care your dental clinic is where confidence begins.\"");
-
-        gotreatment.setText("SERVICES");
-        gotreatment.setBorder(null);
-        gotreatment.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                gotreatmentActionPerformed(evt);
-            }
-        });
 
         gobill.setText("BILL");
-        gobill.setBorder(null);
         gobill.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 gobillActionPerformed(evt);
@@ -107,86 +82,95 @@ public class HOMEPAGE extends javax.swing.JFrame {
         });
 
         goregistration.setText("REGISTRATION");
-        goregistration.setBorder(null);
         goregistration.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 goregistrationActionPerformed(evt);
             }
         });
 
-        gohistory.setText("HISTORY");
-        gohistory.setBorder(null);
-        gohistory.addActionListener(new java.awt.event.ActionListener() {
+        gotreatmentdeatails.setText("TREATMENT ");
+        gotreatmentdeatails.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                gohistoryActionPerformed(evt);
+                gotreatmentdeatailsActionPerformed(evt);
             }
         });
 
         gologout.setText("LOG OUT");
-        gologout.setBorder(null);
         gologout.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 gologoutActionPerformed(evt);
             }
         });
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(goregistration, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(gotreatment, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(gobill, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(gohistory, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(44, 44, 44)
-                .addComponent(gologout, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(15, 15, 15))
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(goregistration, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(gotreatment, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(gobill, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(gohistory, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(gologout, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(16, Short.MAX_VALUE))
-        );
-
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap(156, Short.MAX_VALUE)
+                .addContainerGap(154, Short.MAX_VALUE)
+                .addComponent(jLabel1)
+                .addGap(109, 109, 109))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(72, 72, 72)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(goappointment, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(gohistory, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(gobill, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(goschedule, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(gotreatmentdeatails, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 420, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(209, 209, 209))
+                        .addComponent(goregistration)
+                        .addGap(109, 109, 109))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 550, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(134, 134, 134))))
-            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(gologout)
+                        .addGap(18, 18, 18))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(gotreatment)
+                        .addContainerGap())))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 26, Short.MAX_VALUE)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel3)
-                .addGap(56, 56, 56))
+                .addGap(17, 17, 17)
+                .addComponent(jLabel1)
+                .addGap(34, 34, 34)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(goappointment)
+                    .addComponent(goregistration))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(gotreatmentdeatails)
+                    .addComponent(gotreatment))
+                .addGap(18, 18, 18)
+                .addComponent(goschedule)
+                .addGap(18, 18, 18)
+                .addComponent(gohistory)
+                .addGap(18, 18, 18)
+                .addComponent(gobill)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 43, Short.MAX_VALUE)
+                .addComponent(gologout)
+                .addGap(17, 17, 17))
         );
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 840, 170));
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
+        );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -195,14 +179,14 @@ public class HOMEPAGE extends javax.swing.JFrame {
         // TODO add your handling code here:
         appointment obj = new appointment();
         obj.setVisible(true);
-           dispose();
+           this.dispose();
     }//GEN-LAST:event_goappointmentActionPerformed
 
     private void gotreatmentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gotreatmentActionPerformed
         // TODO add your handling code here:
         detailstreatment obj = new detailstreatment();
         obj.setVisible(true);
-           dispose();
+           this.dispose();
     }//GEN-LAST:event_gotreatmentActionPerformed
 
     private void goscheduleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_goscheduleActionPerformed
@@ -242,7 +226,9 @@ public class HOMEPAGE extends javax.swing.JFrame {
 
     private void gotreatmentdeatailsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gotreatmentdeatailsActionPerformed
         // TODO add your handling code here:
-        
+        treatmentdetails obj = new treatmentdetails();
+        obj.setVisible(true);
+           dispose();
     }//GEN-LAST:event_gotreatmentdeatailsActionPerformed
 
     /**
@@ -290,11 +276,6 @@ public class HOMEPAGE extends javax.swing.JFrame {
     private javax.swing.JButton gotreatment;
     private javax.swing.JButton gotreatmentdeatails;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
     // End of variables declaration//GEN-END:variables
 }
