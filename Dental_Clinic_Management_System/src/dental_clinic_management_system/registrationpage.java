@@ -1,9 +1,6 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
-package dental_clinic_management_system;
 
+package dental_clinic_management_system;
+import java.sql.*;
 import java.sql.Statement;
 import java.sql.Connection;
 import java.util.logging.Level;
@@ -12,16 +9,22 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
+import DatabaseConnection.Database;
 
 public class registrationpage extends javax.swing.JFrame {
-
+    
+    private Connection DBConnect;
     public registrationpage() {
         initComponents();
+        Database dbcon = new Database () ;
+        DBConnect = dbcon.getConnection();
       
+     
+    }
+    Connection con;
+    PreparedStatement pst;
     
   
-            
-    }
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -175,8 +178,38 @@ public class registrationpage extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void submitbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitbtnActionPerformed
-        
-          
+        try {
+        // Get input values
+        String Username = username.getText().trim();
+        String Passwordd = password.getText().trim();
+        String Email = emailtxt.getText().trim();
+
+        // Validation to ensure all fields are filled
+        if (Username.isEmpty() || Passwordd.isEmpty() || Email.isEmpty()) {
+            JOptionPane.showMessageDialog(this, "You need to fill up all fields!", "Error", JOptionPane.ERROR_MESSAGE);
+            return; // Stop further execution
+        }
+
+        // Insert query
+        pst = con.prepareStatement("INSERT INTO registration (UserName, Password, Email) VALUES (?, ?, ?)");
+        pst.setString(1, Username);
+        pst.setString(2, Passwordd); // Corrected parameter order
+        pst.setString(3, Email);
+
+        int k = pst.executeUpdate(); // Execute the update
+        if (k == 1) {
+            JOptionPane.showMessageDialog(this, "You have been registered successfully.", "Success", JOptionPane.INFORMATION_MESSAGE);
+            username.setText(""); // Clear the Username field
+            password.setText(""); // Clear the Password field
+            emailtxt.setText(""); // Clear the Email field
+        } else {
+            JOptionPane.showMessageDialog(this, "Registration failed. Please try again.", "Error", JOptionPane.ERROR_MESSAGE);
+        }
+    } catch (SQLException ex) {
+        Logger.getLogger(registrationpage.class.getName()).log(Level.SEVERE, null, ex);
+        JOptionPane.showMessageDialog(this, "Database Error: " + ex.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+    }
+     
     }//GEN-LAST:event_submitbtnActionPerformed
 
     private void usernameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_usernameActionPerformed
