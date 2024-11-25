@@ -179,35 +179,62 @@ public class registrationpage extends javax.swing.JFrame {
 
     private void submitbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitbtnActionPerformed
         try {
-        // Get input values
-        String Username = username.getText().trim();
-        String Passwordd = password.getText().trim();
-        String Email = emailtxt.getText().trim();
+        // Step 1: Load the MySQL JDBC Driver
+        Class.forName("com.mysql.cj.jdbc.Driver");
 
-        // Validation to ensure all fields are filled
+        // Step 2: Establish the Database Connection
+        String url = "jdbc:mysql://localhost:3306/dcms"; // Replace with your database URL
+        String user = "root"; // Replace with your database username
+        String password = ""; // Replace with your database password
+        con = DriverManager.getConnection(url, user, password);
+
+        // Step 3: Get User Input from Text Fields
+        String Username = usernametxt.getText();
+        String Passwordd = passwordtext.getText();
+        String Email = emailtext.getText();
+
+        // Validate Input
         if (Username.isEmpty() || Passwordd.isEmpty() || Email.isEmpty()) {
-            JOptionPane.showMessageDialog(this, "You need to fill up all fields!", "Error", JOptionPane.ERROR_MESSAGE);
-            return; // Stop further execution
+            JOptionPane.showMessageDialog(this, "All fields must be filled!", "Error", JOptionPane.ERROR_MESSAGE);
+            return; // Stop execution if fields are empty
         }
 
-        // Insert query
-        pst = con.prepareStatement("INSERT INTO registration (UserName, Password, Email) VALUES (?, ?, ?)");
+        // Step 4: Prepare the Insert Query
+        String insertQuery = "INSERT INTO registration (UserName, Password, Email) VALUES (?, ?, ?)";
+        pst = con.prepareStatement(insertQuery);
         pst.setString(1, Username);
-        pst.setString(2, Passwordd); // Corrected parameter order
+        pst.setString(2, Passwordd);
         pst.setString(3, Email);
 
-        int k = pst.executeUpdate(); // Execute the update
+        // Step 5: Execute the Insert Query
+        int k = pst.executeUpdate();
         if (k == 1) {
-            JOptionPane.showMessageDialog(this, "You have been registered successfully.", "Success", JOptionPane.INFORMATION_MESSAGE);
-            username.setText(""); // Clear the Username field
-            password.setText(""); // Clear the Password field
-            emailtxt.setText(""); // Clear the Email field
+            JOptionPane.showMessageDialog(this, "Registration successful!", "Success", JOptionPane.INFORMATION_MESSAGE);
+
+            // Clear Text Fields After Successful Registration
+            usernametxt.setText("");
+            passwordtext.setText("");
+            emailtext.setText("");
         } else {
-            JOptionPane.showMessageDialog(this, "Registration failed. Please try again.", "Error", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(this, "Registration failed.", "Error", JOptionPane.ERROR_MESSAGE);
         }
+
+    } catch (ClassNotFoundException ex) {
+        JOptionPane.showMessageDialog(this, "Driver not found: " + ex.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
     } catch (SQLException ex) {
-        Logger.getLogger(registrationpage.class.getName()).log(Level.SEVERE, null, ex);
-        JOptionPane.showMessageDialog(this, "Database Error: " + ex.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+        JOptionPane.showMessageDialog(this, "Database error: " + ex.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+    } finally {
+        // Step 6: Close Resources
+        try {
+            if (rs != null) rs.close();
+            if (pst != null) pst.close();
+            if (con != null) con.close();
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(this, "Error closing resources: " + ex.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+        }
+    }
+
+
     }
      
     }//GEN-LAST:event_submitbtnActionPerformed

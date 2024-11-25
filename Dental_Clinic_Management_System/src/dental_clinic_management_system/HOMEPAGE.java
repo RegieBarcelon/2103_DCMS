@@ -26,7 +26,6 @@ public class HOMEPAGE extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        gotreatmentdeatails = new javax.swing.JButton();
         goappointment = new javax.swing.JButton();
         goschedule = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
@@ -46,21 +45,13 @@ public class HOMEPAGE extends javax.swing.JFrame {
         setTitle("Home Page");
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        gotreatmentdeatails.setText("TREATMENT ");
-        gotreatmentdeatails.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                gotreatmentdeatailsActionPerformed(evt);
-            }
-        });
-        getContentPane().add(gotreatmentdeatails, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 400, 150, -1));
-
         goappointment.setText("BOOK  APPOINTMENT");
         goappointment.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 goappointmentActionPerformed(evt);
             }
         });
-        getContentPane().add(goappointment, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 400, 170, -1));
+        getContentPane().add(goappointment, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 400, 170, -1));
 
         goschedule.setText("SCHEDULE");
         goschedule.addActionListener(new java.awt.event.ActionListener() {
@@ -68,7 +59,7 @@ public class HOMEPAGE extends javax.swing.JFrame {
                 goscheduleActionPerformed(evt);
             }
         });
-        getContentPane().add(goschedule, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 400, 150, -1));
+        getContentPane().add(goschedule, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 400, 150, -1));
 
         jLabel4.setBackground(new java.awt.Color(255, 255, 255));
         jLabel4.setFont(new java.awt.Font("Monotype Corsiva", 0, 36)); // NOI18N
@@ -240,11 +231,6 @@ public class HOMEPAGE extends javax.swing.JFrame {
            dispose();
     }//GEN-LAST:event_goregistrationActionPerformed
 
-    private void gotreatmentdeatailsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gotreatmentdeatailsActionPerformed
-        // TODO add your handling code here:
-        
-    }//GEN-LAST:event_gotreatmentdeatailsActionPerformed
-
     /**
      * @param args the command line arguments
      */
@@ -288,7 +274,6 @@ public class HOMEPAGE extends javax.swing.JFrame {
     private javax.swing.JButton goregistration;
     private javax.swing.JButton goschedule;
     private javax.swing.JButton gotreatment;
-    private javax.swing.JButton gotreatmentdeatails;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
