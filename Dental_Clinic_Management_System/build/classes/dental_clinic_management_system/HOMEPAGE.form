@@ -26,19 +26,6 @@
     <Property name="useNullLayout" type="boolean" value="false"/>
   </Layout>
   <SubComponents>
-    <Component class="javax.swing.JButton" name="gotreatmentdeatails">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="TREATMENT "/>
-      </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="gotreatmentdeatailsActionPerformed"/>
-      </Events>
-      <Constraints>
-        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="680" y="400" width="150" height="-1"/>
-        </Constraint>
-      </Constraints>
-    </Component>
     <Component class="javax.swing.JButton" name="goappointment">
       <Properties>
         <Property name="text" type="java.lang.String" value="BOOK  APPOINTMENT"/>
@@ -48,7 +35,7 @@
       </Events>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="320" y="400" width="170" height="-1"/>
+          <AbsoluteConstraints x="480" y="400" width="170" height="-1"/>
         </Constraint>
       </Constraints>
     </Component>
@@ -61,7 +48,7 @@
       </Events>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="510" y="400" width="150" height="-1"/>
+          <AbsoluteConstraints x="670" y="400" width="150" height="-1"/>
         </Constraint>
       </Constraints>
     </Component>
